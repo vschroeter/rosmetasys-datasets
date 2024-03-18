@@ -10,7 +10,7 @@ assignees: vschroeter
 Here is a new ROS2 meta system dataset generated with [rosmetasys](https://github.com/vschroeter/rosmetasys).
 
 Checklist:
-- [ ] Uploaded .json or .zip containing the data.
+- [ ] Attached .json or .zip containing the data.
 
 Some details about the origin of the data:
 - ...

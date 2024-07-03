@@ -9,5 +9,60 @@ If you want to anonymously submit your dataset without creating a pull request a
 
 # Usage of the datasets
 
-The data gathering aims to create an open-source accessible dataset according to the [FAIR-Principles](https://www.go-fair.org/fair-principles/).
-Snaphsots of the dataset might be published as collection to https://zenodo.org/. 
+The objective of the data gathering is to create an open-source, accessible dataset in accordance with the [FAIR-Principles](https://www.go-fair.org/fair-principles/). 
+Snapshots of the dataset may be published as a collection on [Zenodo](https://zenodo.org/).
+
+# Format of the datasets
+
+```json
+{
+    "version": "1.0.0",
+    "created_at": "2024-01-01T10:40:40.000000",
+    "nodes": [
+        {
+            "name": "first_node",
+            "namespace": "/",
+            "localhost_only": true,
+            "publishers": [
+                {
+                    "name": "/parameter_events",
+                    "type": "rcl_interfaces/msg/ParameterEvent"
+                },
+                {
+                    "name": "/my/topic/1",
+                    "type": "std_msgs/msg/Empty"
+                },
+                {
+                    "name": "/rosout",
+                    "type": "rcl_interfaces/msg/Log"
+                }
+            ],
+            "subscribers": [
+                {
+                    "name": "/my/topic/1",
+                    "type": "std_msgs/msg/Empty"
+                },
+                {
+                    "name": "/my/topic/2",
+                    "type": "custom_type"
+                }
+            ],
+            "services": [
+                ...
+            ],
+            "clients": [
+                ...
+            ]
+        },
+        {
+            "name": "second_node",
+            "namespace": "/",
+            "localhost_only": false,
+            ...
+        }
+    ]
+}
+
+```
+
+See [rosmetasys](https://github.com/vschroeter/rosmetasys) for more information on exporting datasets.

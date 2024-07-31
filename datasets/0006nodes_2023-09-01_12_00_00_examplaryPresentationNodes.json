@@ -1,0 +1,133 @@
+{
+    "version": "1.0.0",
+    "name": "0006nodes_2023-09-01_12_00_00_examplaryPresentationNodes",
+    "description": "6 example nodes used to show the principle of the visualization.",
+    "created_at": "2023-09-01T12:00:00.000000",
+    "nodeCount": 6,
+    "author": "vschroeter",
+    "cc_by_sa_consent": true,
+    "nodes": [
+        {
+            "name": "display_left",
+            "namespace": "/",
+            "localhost_only": false,
+            "publishers": [
+                {
+                    "name": "/hardware_interface",
+                    "type": "std_msgs/msg/Empty"
+                }
+            ],
+            "subscribers": [
+                {
+                    "name": "/display_left",
+                    "type": "std_msgs/msg/Empty"
+                }
+            ],
+            "services": [],
+            "clients": []
+        },
+        {
+            "name": "display_right",
+            "namespace": "/",
+            "localhost_only": false,
+            "publishers": [
+                {
+                    "name": "/hardware_interface",
+                    "type": "std_msgs/msg/Empty"
+                }
+            ],
+            "subscribers": [
+                {
+                    "name": "/display_right",
+                    "type": "std_msgs/msg/Empty"
+                }
+            ],
+            "services": [],
+            "clients": []
+        },
+        {
+            "name": "display_bottom",
+            "namespace": "/",
+            "localhost_only": false,
+            "publishers": [
+                {
+                    "name": "/hardware_interface",
+                    "type": "std_msgs/msg/Empty"
+                }
+            ],
+            "subscribers": [
+                {
+                    "name": "/display_bottom",
+                    "type": "std_msgs/msg/Empty"
+                }
+            ],
+            "services": [],
+            "clients": []
+        },
+        {
+            "name": "motor",
+            "namespace": "/",
+            "localhost_only": false,
+            "publishers": [
+                {
+                    "name": "/hardware_interface",
+                    "type": "std_msgs/msg/Empty"
+                }
+            ],
+            "subscribers": [
+                {
+                    "name": "/motor",
+                    "type": "std_msgs/msg/Empty"
+                }
+            ],
+            "services": [],
+            "clients": []
+        },
+        {
+            "name": "hardware_interface",
+            "namespace": "/",
+            "localhost_only": false,
+            "publishers": [
+                {
+                    "name": "/manager",
+                    "type": "std_msgs/msg/Empty"
+                }
+            ],
+            "subscribers": [
+                {
+                    "name": "/hardware_interface",
+                    "type": "std_msgs/msg/Empty"
+                }
+            ],
+            "services": [],
+            "clients": []
+        },
+        {
+            "name": "display_manager",
+            "namespace": "/",
+            "localhost_only": false,
+            "publishers": [
+                {
+                    "name": "/display_left",
+                    "type": "std_msgs/msg/Empty"
+                },
+                {
+                    "name": "/display_right",
+                    "type": "std_msgs/msg/Empty"
+                },
+                {
+                    "name": "/display_bottom",
+                    "type": "std_msgs/msg/Empty"
+                }
+            ],
+            "subscribers": [
+                {
+                    "name": "/manager",
+                    "type": "std_msgs/msg/Empty"
+                }
+            ],
+            "services": [],
+            "clients": []
+        }
+    ]
+}

@@ -1,0 +1,1662 @@
+{
+    "version": "1.0.0",
+    "name": "0021nodes_2023-09-01_12_00_00_roseRobot",
+    "description": "21 nodes running in the ROS-E table robot system.",
+    "created_at": "2023-09-01T12:00:00.000000",
+    "nodeCount": 21,
+    "author": "vschroeter",
+    "cc_by_sa_consent": true,
+    "nodes": [
+        {
+            "name": "sample_player",
+            "namespace": "/",
+            "localhost_only": false,
+            "publishers": [
+                {
+                    "name": "/parameter_events",
+                    "type": "rcl_interfaces/msg/ParameterEvent"
+                },
+                {
+                    "name": "/rosout",
+                    "type": "rcl_interfaces/msg/Log"
+                }
+            ],
+            "subscribers": [
+                {
+                    "name": "/parameter_events",
+                    "type": "rcl_interfaces/msg/ParameterEvent"
+                },
+                {
+                    "name": "/play_sample",
+                    "type": "std_msgs/msg/String"
+                }
+            ],
+            "services": [
+                {
+                    "name": "/sample_player/describe_parameters",
+                    "type": "rcl_interfaces/srv/DescribeParameters"
+                },
+                {
+                    "name": "/sample_player/get_parameter_types",
+                    "type": "rcl_interfaces/srv/GetParameterTypes"
+                },
+                {
+                    "name": "/sample_player/get_parameters",
+                    "type": "rcl_interfaces/srv/GetParameters"
+                },
+                {
+                    "name": "/sample_player/list_parameters",
+                    "type": "rcl_interfaces/srv/ListParameters"
+                },
+                {
+                    "name": "/sample_player/set_parameters",
+                    "type": "rcl_interfaces/srv/SetParameters"
+                },
+                {
+                    "name": "/sample_player/set_parameters_atomically",
+                    "type": "rcl_interfaces/srv/SetParametersAtomically"
+                }
+            ],
+            "clients": []
+        },
+        {
+            "name": "resource_manager_master",
+            "namespace": "/dialog",
+            "localhost_only": false,
+            "publishers": [
+                {
+                    "name": "/dialog/resources/manager/newResourcesAvailable",
+                    "type": "std_msgs/msg/Empty"
+                },
+                {
+                    "name": "/parameter_events",
+                    "type": "rcl_interfaces/msg/ParameterEvent"
+                },
+                {
+                    "name": "/rosout",
+                    "type": "rcl_interfaces/msg/Log"
+                }
+            ],
+            "subscribers": [],
+            "services": [
+                {
+                    "name": "/dialog/resource_manager_master/describe_parameters",
+                    "type": "rcl_interfaces/srv/DescribeParameters"
+                },
+                {
+                    "name": "/dialog/resource_manager_master/get_parameter_types",
+                    "type": "rcl_interfaces/srv/GetParameterTypes"
+                },
+                {
+                    "name": "/dialog/resource_manager_master/get_parameters",
+                    "type": "rcl_interfaces/srv/GetParameters"
+                },
+                {
+                    "name": "/dialog/resource_manager_master/list_parameters",
+                    "type": "rcl_interfaces/srv/ListParameters"
+                },
+                {
+                    "name": "/dialog/resource_manager_master/set_parameters",
+                    "type": "rcl_interfaces/srv/SetParameters"
+                },
+                {
+                    "name": "/dialog/resource_manager_master/set_parameters_atomically",
+                    "type": "rcl_interfaces/srv/SetParametersAtomically"
+                },
+                {
+                    "name": "/dialog/resources/manager/acquire",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/dialog/resources/manager/create",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/dialog/resources/manager/delete",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/dialog/resources/manager/giveaway",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/dialog/resources/manager/ownerList",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/dialog/resources/manager/release",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/dialog/resources/manager/resourceList",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                }
+            ],
+            "clients": []
+        },
+        {
+            "name": "tts_guard",
+            "namespace": "/dialog",
+            "localhost_only": false,
+            "publishers": [
+                {
+                    "name": "/kw_detected_guarded",
+                    "type": "rosass_msgs/msg/AudioMarker"
+                },
+                {
+                    "name": "/parameter_events",
+                    "type": "rcl_interfaces/msg/ParameterEvent"
+                },
+                {
+                    "name": "/rosout",
+                    "type": "rcl_interfaces/msg/Log"
+                }
+            ],
+            "subscribers": [
+                {
+                    "name": "/dialog/resources/manager/newResourcesAvailable",
+                    "type": "std_msgs/msg/Empty"
+                },
+                {
+                    "name": "/dialog_status",
+                    "type": "rosass_msgs/msg/DialogStatus"
+                },
+                {
+                    "name": "/kw_detected",
+                    "type": "rosass_msgs/msg/AudioMarker"
+                }
+            ],
+            "services": [
+                {
+                    "name": "/dialog/tts_guard/describe_parameters",
+                    "type": "rcl_interfaces/srv/DescribeParameters"
+                },
+                {
+                    "name": "/dialog/tts_guard/get_parameter_types",
+                    "type": "rcl_interfaces/srv/GetParameterTypes"
+                },
+                {
+                    "name": "/dialog/tts_guard/get_parameters",
+                    "type": "rcl_interfaces/srv/GetParameters"
+                },
+                {
+                    "name": "/dialog/tts_guard/list_parameters",
+                    "type": "rcl_interfaces/srv/ListParameters"
+                },
+                {
+                    "name": "/dialog/tts_guard/set_parameters",
+                    "type": "rcl_interfaces/srv/SetParameters"
+                },
+                {
+                    "name": "/dialog/tts_guard/set_parameters_atomically",
+                    "type": "rcl_interfaces/srv/SetParametersAtomically"
+                },
+                {
+                    "name": "/dialog/tts_guard_44578/onReceive",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/dialog/tts_guard_44578/onTakeaway",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                }
+            ],
+            "clients": [
+                {
+                    "name": "/dialog/resources/manager/acquire",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/dialog/resources/manager/create",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/dialog/resources/manager/delete",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/dialog/resources/manager/giveaway",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/dialog/resources/manager/ownerList",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/dialog/resources/manager/release",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/dialog/resources/manager/resourceList",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                }
+            ]
+        },
+        {
+            "name": "msg_bridge_json",
+            "namespace": "/",
+            "localhost_only": false,
+            "publishers": [
+                {
+                    "name": "/parameter_events",
+                    "type": "rcl_interfaces/msg/ParameterEvent"
+                },
+                {
+                    "name": "/rosout",
+                    "type": "rcl_interfaces/msg/Log"
+                }
+            ],
+            "subscribers": [],
+            "services": [
+                {
+                    "name": "/bridge/json/client",
+                    "type": "message_bridge_msgs/srv/JsonSrv"
+                },
+                {
+                    "name": "/bridge/json/msgDefault",
+                    "type": "message_bridge_msgs/srv/JsonSrv"
+                },
+                {
+                    "name": "/bridge/json/msgTypeDescription",
+                    "type": "message_bridge_msgs/srv/JsonSrv"
+                },
+                {
+                    "name": "/bridge/json/publish",
+                    "type": "message_bridge_msgs/srv/JsonSrv"
+                },
+                {
+                    "name": "/bridge/json/subscribe",
+                    "type": "message_bridge_msgs/srv/JsonSrv"
+                },
+                {
+                    "name": "/bridge/json/topic",
+                    "type": "message_bridge_msgs/srv/JsonSrv"
+                },
+                {
+                    "name": "/msg_bridge_json/describe_parameters",
+                    "type": "rcl_interfaces/srv/DescribeParameters"
+                },
+                {
+                    "name": "/msg_bridge_json/get_parameter_types",
+                    "type": "rcl_interfaces/srv/GetParameterTypes"
+                },
+                {
+                    "name": "/msg_bridge_json/get_parameters",
+                    "type": "rcl_interfaces/srv/GetParameters"
+                },
+                {
+                    "name": "/msg_bridge_json/list_parameters",
+                    "type": "rcl_interfaces/srv/ListParameters"
+                },
+                {
+                    "name": "/msg_bridge_json/set_parameters",
+                    "type": "rcl_interfaces/srv/SetParameters"
+                },
+                {
+                    "name": "/msg_bridge_json/set_parameters_atomically",
+                    "type": "rcl_interfaces/srv/SetParametersAtomically"
+                }
+            ],
+            "clients": [
+                {
+                    "name": "/system_info/ros/get_all_node_names_and_namespaces",
+                    "type": "system_info_msgs/srv/RosInfo"
+                },
+                {
+                    "name": "/system_info/ros/get_client_names_and_types_by_node_name",
+                    "type": "system_info_msgs/srv/RosInfo"
+                },
+                {
+                    "name": "/system_info/ros/get_publisher_names_and_types_by_node_name",
+                    "type": "system_info_msgs/srv/RosInfo"
+                },
+                {
+                    "name": "/system_info/ros/get_service_names_and_types_by_node_name",
+                    "type": "system_info_msgs/srv/RosInfo"
+                },
+                {
+                    "name": "/system_info/ros/get_subscriber_names_and_types_by_node_name",
+                    "type": "system_info_msgs/srv/RosInfo"
+                }
+            ]
+        },
+        {
+            "name": "msg_bridge_websocket",
+            "namespace": "/",
+            "localhost_only": false,
+            "publishers": [
+                {
+                    "name": "/parameter_events",
+                    "type": "rcl_interfaces/msg/ParameterEvent"
+                },
+                {
+                    "name": "/rosout",
+                    "type": "rcl_interfaces/msg/Log"
+                }
+            ],
+            "subscribers": [],
+            "services": [
+                {
+                    "name": "/msg_bridge_websocket/describe_parameters",
+                    "type": "rcl_interfaces/srv/DescribeParameters"
+                },
+                {
+                    "name": "/msg_bridge_websocket/get_parameter_types",
+                    "type": "rcl_interfaces/srv/GetParameterTypes"
+                },
+                {
+                    "name": "/msg_bridge_websocket/get_parameters",
+                    "type": "rcl_interfaces/srv/GetParameters"
+                },
+                {
+                    "name": "/msg_bridge_websocket/list_parameters",
+                    "type": "rcl_interfaces/srv/ListParameters"
+                },
+                {
+                    "name": "/msg_bridge_websocket/set_parameters",
+                    "type": "rcl_interfaces/srv/SetParameters"
+                },
+                {
+                    "name": "/msg_bridge_websocket/set_parameters_atomically",
+                    "type": "rcl_interfaces/srv/SetParametersAtomically"
+                }
+            ],
+            "clients": [
+                {
+                    "name": "/bridge/json/client",
+                    "type": "message_bridge_msgs/srv/JsonSrv"
+                },
+                {
+                    "name": "/bridge/json/msgDefault",
+                    "type": "message_bridge_msgs/srv/JsonSrv"
+                },
+                {
+                    "name": "/bridge/json/msgTypeDescription",
+                    "type": "message_bridge_msgs/srv/JsonSrv"
+                },
+                {
+                    "name": "/bridge/json/publish",
+                    "type": "message_bridge_msgs/srv/JsonSrv"
+                },
+                {
+                    "name": "/bridge/json/subscribe",
+                    "type": "message_bridge_msgs/srv/JsonSrv"
+                },
+                {
+                    "name": "/bridge/json/topic",
+                    "type": "message_bridge_msgs/srv/JsonSrv"
+                }
+            ]
+        },
+        {
+            "name": "i2c_bridge_node",
+            "namespace": "/",
+            "localhost_only": false,
+            "publishers": [
+                {
+                    "name": "/parameter_events",
+                    "type": "rcl_interfaces/msg/ParameterEvent"
+                },
+                {
+                    "name": "/rosout",
+                    "type": "rcl_interfaces/msg/Log"
+                }
+            ],
+            "subscribers": [
+                {
+                    "name": "/resources/manager/newResourcesAvailable",
+                    "type": "std_msgs/msg/Empty"
+                },
+                {
+                    "name": "/system/i2c/write16",
+                    "type": "hardware_interfaces_msgs/msg/I2Cwrite16"
+                },
+                {
+                    "name": "/system/i2c/write8",
+                    "type": "hardware_interfaces_msgs/msg/I2Cwrite8"
+                },
+                {
+                    "name": "/system/i2c/writeArray",
+                    "type": "hardware_interfaces_msgs/msg/I2CwriteArray"
+                }
+            ],
+            "services": [
+                {
+                    "name": "/i2c_bridge_node/describe_parameters",
+                    "type": "rcl_interfaces/srv/DescribeParameters"
+                },
+                {
+                    "name": "/i2c_bridge_node/get_parameter_types",
+                    "type": "rcl_interfaces/srv/GetParameterTypes"
+                },
+                {
+                    "name": "/i2c_bridge_node/get_parameters",
+                    "type": "rcl_interfaces/srv/GetParameters"
+                },
+                {
+                    "name": "/i2c_bridge_node/list_parameters",
+                    "type": "rcl_interfaces/srv/ListParameters"
+                },
+                {
+                    "name": "/i2c_bridge_node/set_parameters",
+                    "type": "rcl_interfaces/srv/SetParameters"
+                },
+                {
+                    "name": "/i2c_bridge_node/set_parameters_atomically",
+                    "type": "rcl_interfaces/srv/SetParametersAtomically"
+                }
+            ],
+            "clients": [
+                {
+                    "name": "/resources/manager/acquire",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/resources/manager/create",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/resources/manager/delete",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/resources/manager/giveaway",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/resources/manager/ownerList",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/resources/manager/release",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/resources/manager/resourceList",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                }
+            ]
+        },
+        {
+            "name": "system_info_ros",
+            "namespace": "/",
+            "localhost_only": false,
+            "publishers": [
+                {
+                    "name": "/parameter_events",
+                    "type": "rcl_interfaces/msg/ParameterEvent"
+                },
+                {
+                    "name": "/rosout",
+                    "type": "rcl_interfaces/msg/Log"
+                },
+                {
+                    "name": "/system_info/ros/nodes_changed",
+                    "type": "std_msgs/msg/Empty"
+                }
+            ],
+            "subscribers": [],
+            "services": [
+                {
+                    "name": "/system_info/ros/get_all_node_names_and_namespaces",
+                    "type": "system_info_msgs/srv/RosInfo"
+                },
+                {
+                    "name": "/system_info/ros/get_all_topic_names_and_types",
+                    "type": "system_info_msgs/srv/RosInfo"
+                },
+                {
+                    "name": "/system_info/ros/get_client_names_and_types_by_node_name",
+                    "type": "system_info_msgs/srv/RosInfo"
+                },
+                {
+                    "name": "/system_info/ros/get_publisher_names_and_types_by_node_name",
+                    "type": "system_info_msgs/srv/RosInfo"
+                },
+                {
+                    "name": "/system_info/ros/get_service_names_and_types_by_node_name",
+                    "type": "system_info_msgs/srv/RosInfo"
+                },
+                {
+                    "name": "/system_info/ros/get_subscriber_names_and_types_by_node_name",
+                    "type": "system_info_msgs/srv/RosInfo"
+                },
+                {
+                    "name": "/system_info_ros/describe_parameters",
+                    "type": "rcl_interfaces/srv/DescribeParameters"
+                },
+                {
+                    "name": "/system_info_ros/get_parameter_types",
+                    "type": "rcl_interfaces/srv/GetParameterTypes"
+                },
+                {
+                    "name": "/system_info_ros/get_parameters",
+                    "type": "rcl_interfaces/srv/GetParameters"
+                },
+                {
+                    "name": "/system_info_ros/list_parameters",
+                    "type": "rcl_interfaces/srv/ListParameters"
+                },
+                {
+                    "name": "/system_info_ros/set_parameters",
+                    "type": "rcl_interfaces/srv/SetParameters"
+                },
+                {
+                    "name": "/system_info_ros/set_parameters_atomically",
+                    "type": "rcl_interfaces/srv/SetParametersAtomically"
+                }
+            ],
+            "clients": []
+        },
+        {
+            "name": "resource_manager_master",
+            "namespace": "/",
+            "localhost_only": false,
+            "publishers": [
+                {
+                    "name": "/parameter_events",
+                    "type": "rcl_interfaces/msg/ParameterEvent"
+                },
+                {
+                    "name": "/resources/manager/newResourcesAvailable",
+                    "type": "std_msgs/msg/Empty"
+                },
+                {
+                    "name": "/rosout",
+                    "type": "rcl_interfaces/msg/Log"
+                }
+            ],
+            "subscribers": [],
+            "services": [
+                {
+                    "name": "/resource_manager_master/describe_parameters",
+                    "type": "rcl_interfaces/srv/DescribeParameters"
+                },
+                {
+                    "name": "/resource_manager_master/get_parameter_types",
+                    "type": "rcl_interfaces/srv/GetParameterTypes"
+                },
+                {
+                    "name": "/resource_manager_master/get_parameters",
+                    "type": "rcl_interfaces/srv/GetParameters"
+                },
+                {
+                    "name": "/resource_manager_master/list_parameters",
+                    "type": "rcl_interfaces/srv/ListParameters"
+                },
+                {
+                    "name": "/resource_manager_master/set_parameters",
+                    "type": "rcl_interfaces/srv/SetParameters"
+                },
+                {
+                    "name": "/resource_manager_master/set_parameters_atomically",
+                    "type": "rcl_interfaces/srv/SetParametersAtomically"
+                },
+                {
+                    "name": "/resources/manager/acquire",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/resources/manager/create",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/resources/manager/delete",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/resources/manager/giveaway",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/resources/manager/ownerList",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/resources/manager/release",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/resources/manager/resourceList",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                }
+            ],
+            "clients": []
+        },
+        {
+            "name": "display_eye_left",
+            "namespace": "/",
+            "localhost_only": false,
+            "publishers": [
+                {
+                    "name": "/parameter_events",
+                    "type": "rcl_interfaces/msg/ParameterEvent"
+                },
+                {
+                    "name": "/rosout",
+                    "type": "rcl_interfaces/msg/Log"
+                },
+                {
+                    "name": "/system/i2c/writeArray",
+                    "type": "hardware_interfaces_msgs/msg/I2CwriteArray"
+                }
+            ],
+            "subscribers": [
+                {
+                    "name": "/eye/left/animatedText",
+                    "type": "displays_msgs/msg/AnimatedText"
+                },
+                {
+                    "name": "/eye/left/clear",
+                    "type": "std_msgs/msg/Empty"
+                },
+                {
+                    "name": "/eye/left/equalizer/setup",
+                    "type": "displays_msgs/msg/EqualizerSetup"
+                },
+                {
+                    "name": "/eye/left/equalizer/value",
+                    "type": "std_msgs/msg/UInt8"
+                },
+                {
+                    "name": "/eye/left/polygon/set/animationDuration",
+                    "type": "std_msgs/msg/UInt16"
+                },
+                {
+                    "name": "/eye/left/polygon/set/compound",
+                    "type": "displays_msgs/msg/PolygonCompoundMsg"
+                },
+                {
+                    "name": "/eye/left/polygon/set/count",
+                    "type": "std_msgs/msg/UInt8"
+                },
+                {
+                    "name": "/eye/left/polygon/set/polygon",
+                    "type": "displays_msgs/msg/Polygon"
+                },
+                {
+                    "name": "/eye/left/polygon/set/style",
+                    "type": "displays_msgs/msg/PolygonStyle"
+                },
+                {
+                    "name": "/eye/left/polygon/set/viewDirection",
+                    "type": "displays_msgs/msg/Point"
+                },
+                {
+                    "name": "/eye/left/text",
+                    "type": "displays_msgs/msg/DisplayText"
+                },
+                {
+                    "name": "/resources/manager/newResourcesAvailable",
+                    "type": "std_msgs/msg/Empty"
+                }
+            ],
+            "services": [
+                {
+                    "name": "/display_eye_left/describe_parameters",
+                    "type": "rcl_interfaces/srv/DescribeParameters"
+                },
+                {
+                    "name": "/display_eye_left/get_parameter_types",
+                    "type": "rcl_interfaces/srv/GetParameterTypes"
+                },
+                {
+                    "name": "/display_eye_left/get_parameters",
+                    "type": "rcl_interfaces/srv/GetParameters"
+                },
+                {
+                    "name": "/display_eye_left/list_parameters",
+                    "type": "rcl_interfaces/srv/ListParameters"
+                },
+                {
+                    "name": "/display_eye_left/set_parameters",
+                    "type": "rcl_interfaces/srv/SetParameters"
+                },
+                {
+                    "name": "/display_eye_left/set_parameters_atomically",
+                    "type": "rcl_interfaces/srv/SetParametersAtomically"
+                }
+            ],
+            "clients": [
+                {
+                    "name": "/resources/manager/acquire",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/resources/manager/create",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/resources/manager/delete",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/resources/manager/giveaway",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/resources/manager/ownerList",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/resources/manager/release",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/resources/manager/resourceList",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                }
+            ]
+        },
+        {
+            "name": "display_eye_right",
+            "namespace": "/",
+            "localhost_only": false,
+            "publishers": [
+                {
+                    "name": "/parameter_events",
+                    "type": "rcl_interfaces/msg/ParameterEvent"
+                },
+                {
+                    "name": "/rosout",
+                    "type": "rcl_interfaces/msg/Log"
+                },
+                {
+                    "name": "/system/i2c/writeArray",
+                    "type": "hardware_interfaces_msgs/msg/I2CwriteArray"
+                }
+            ],
+            "subscribers": [
+                {
+                    "name": "/eye/right/animatedText",
+                    "type": "displays_msgs/msg/AnimatedText"
+                },
+                {
+                    "name": "/eye/right/clear",
+                    "type": "std_msgs/msg/Empty"
+                },
+                {
+                    "name": "/eye/right/equalizer/setup",
+                    "type": "displays_msgs/msg/EqualizerSetup"
+                },
+                {
+                    "name": "/eye/right/equalizer/value",
+                    "type": "std_msgs/msg/UInt8"
+                },
+                {
+                    "name": "/eye/right/polygon/set/animationDuration",
+                    "type": "std_msgs/msg/UInt16"
+                },
+                {
+                    "name": "/eye/right/polygon/set/compound",
+                    "type": "displays_msgs/msg/PolygonCompoundMsg"
+                },
+                {
+                    "name": "/eye/right/polygon/set/count",
+                    "type": "std_msgs/msg/UInt8"
+                },
+                {
+                    "name": "/eye/right/polygon/set/polygon",
+                    "type": "displays_msgs/msg/Polygon"
+                },
+                {
+                    "name": "/eye/right/polygon/set/style",
+                    "type": "displays_msgs/msg/PolygonStyle"
+                },
+                {
+                    "name": "/eye/right/polygon/set/viewDirection",
+                    "type": "displays_msgs/msg/Point"
+                },
+                {
+                    "name": "/eye/right/text",
+                    "type": "displays_msgs/msg/DisplayText"
+                },
+                {
+                    "name": "/resources/manager/newResourcesAvailable",
+                    "type": "std_msgs/msg/Empty"
+                }
+            ],
+            "services": [
+                {
+                    "name": "/display_eye_right/describe_parameters",
+                    "type": "rcl_interfaces/srv/DescribeParameters"
+                },
+                {
+                    "name": "/display_eye_right/get_parameter_types",
+                    "type": "rcl_interfaces/srv/GetParameterTypes"
+                },
+                {
+                    "name": "/display_eye_right/get_parameters",
+                    "type": "rcl_interfaces/srv/GetParameters"
+                },
+                {
+                    "name": "/display_eye_right/list_parameters",
+                    "type": "rcl_interfaces/srv/ListParameters"
+                },
+                {
+                    "name": "/display_eye_right/set_parameters",
+                    "type": "rcl_interfaces/srv/SetParameters"
+                },
+                {
+                    "name": "/display_eye_right/set_parameters_atomically",
+                    "type": "rcl_interfaces/srv/SetParametersAtomically"
+                }
+            ],
+            "clients": [
+                {
+                    "name": "/resources/manager/acquire",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/resources/manager/create",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/resources/manager/delete",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/resources/manager/giveaway",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/resources/manager/ownerList",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/resources/manager/release",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/resources/manager/resourceList",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                }
+            ]
+        },
+        {
+            "name": "display_mouth",
+            "namespace": "/",
+            "localhost_only": false,
+            "publishers": [
+                {
+                    "name": "/parameter_events",
+                    "type": "rcl_interfaces/msg/ParameterEvent"
+                },
+                {
+                    "name": "/rosout",
+                    "type": "rcl_interfaces/msg/Log"
+                },
+                {
+                    "name": "/system/i2c/writeArray",
+                    "type": "hardware_interfaces_msgs/msg/I2CwriteArray"
+                }
+            ],
+            "subscribers": [
+                {
+                    "name": "/mouth/animatedText",
+                    "type": "displays_msgs/msg/AnimatedText"
+                },
+                {
+                    "name": "/mouth/clear",
+                    "type": "std_msgs/msg/Empty"
+                },
+                {
+                    "name": "/mouth/equalizer/setup",
+                    "type": "displays_msgs/msg/EqualizerSetup"
+                },
+                {
+                    "name": "/mouth/equalizer/value",
+                    "type": "std_msgs/msg/UInt8"
+                },
+                {
+                    "name": "/mouth/polygon/set/animationDuration",
+                    "type": "std_msgs/msg/UInt16"
+                },
+                {
+                    "name": "/mouth/polygon/set/compound",
+                    "type": "displays_msgs/msg/PolygonCompoundMsg"
+                },
+                {
+                    "name": "/mouth/polygon/set/count",
+                    "type": "std_msgs/msg/UInt8"
+                },
+                {
+                    "name": "/mouth/polygon/set/polygon",
+                    "type": "displays_msgs/msg/Polygon"
+                },
+                {
+                    "name": "/mouth/polygon/set/style",
+                    "type": "displays_msgs/msg/PolygonStyle"
+                },
+                {
+                    "name": "/mouth/polygon/set/viewDirection",
+                    "type": "displays_msgs/msg/Point"
+                },
+                {
+                    "name": "/mouth/text",
+                    "type": "displays_msgs/msg/DisplayText"
+                },
+                {
+                    "name": "/resources/manager/newResourcesAvailable",
+                    "type": "std_msgs/msg/Empty"
+                }
+            ],
+            "services": [
+                {
+                    "name": "/display_mouth/describe_parameters",
+                    "type": "rcl_interfaces/srv/DescribeParameters"
+                },
+                {
+                    "name": "/display_mouth/get_parameter_types",
+                    "type": "rcl_interfaces/srv/GetParameterTypes"
+                },
+                {
+                    "name": "/display_mouth/get_parameters",
+                    "type": "rcl_interfaces/srv/GetParameters"
+                },
+                {
+                    "name": "/display_mouth/list_parameters",
+                    "type": "rcl_interfaces/srv/ListParameters"
+                },
+                {
+                    "name": "/display_mouth/set_parameters",
+                    "type": "rcl_interfaces/srv/SetParameters"
+                },
+                {
+                    "name": "/display_mouth/set_parameters_atomically",
+                    "type": "rcl_interfaces/srv/SetParametersAtomically"
+                }
+            ],
+            "clients": [
+                {
+                    "name": "/resources/manager/acquire",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/resources/manager/create",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/resources/manager/delete",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/resources/manager/giveaway",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/resources/manager/ownerList",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/resources/manager/release",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                },
+                {
+                    "name": "/resources/manager/resourceList",
+                    "type": "resource_manager_msgs/srv/ResourceData"
+                }
+            ]
+        },
+        {
+            "name": "sound_fx",
+            "namespace": "/",
+            "localhost_only": false,
+            "publishers": [
+                {
+                    "name": "/parameter_events",
+                    "type": "rcl_interfaces/msg/ParameterEvent"
+                },
+                {
+                    "name": "/play_sample",
+                    "type": "std_msgs/msg/String"
+                },
+                {
+                    "name": "/rosout",
+                    "type": "rcl_interfaces/msg/Log"
+                }
+            ],
+            "subscribers": [
+                {
+                    "name": "/dialog_status",
+                    "type": "rosass_msgs/msg/DialogStatus"
+                }
+            ],
+            "services": [
+                {
+                    "name": "/sound_fx/describe_parameters",
+                    "type": "rcl_interfaces/srv/DescribeParameters"
+                },
+                {
+                    "name": "/sound_fx/get_parameter_types",
+                    "type": "rcl_interfaces/srv/GetParameterTypes"
+                },
+                {
+                    "name": "/sound_fx/get_parameters",
+                    "type": "rcl_interfaces/srv/GetParameters"
+                },
+                {
+                    "name": "/sound_fx/list_parameters",
+                    "type": "rcl_interfaces/srv/ListParameters"
+                },
+                {
+                    "name": "/sound_fx/set_parameters",
+                    "type": "rcl_interfaces/srv/SetParameters"
+                },
+                {
+                    "name": "/sound_fx/set_parameters_atomically",
+                    "type": "rcl_interfaces/srv/SetParametersAtomically"
+                }
+            ],
+            "clients": []
+        },
+        {
+            "name": "respeaker",
+            "namespace": "/",
+            "localhost_only": false,
+            "publishers": [
+                {
+                    "name": "/parameter_events",
+                    "type": "rcl_interfaces/msg/ParameterEvent"
+                },
+                {
+                    "name": "/respeaker/audio",
+                    "type": "rosass_msgs/msg/AudioBuffer"
+                },
+                {
+                    "name": "/respeaker/direction",
+                    "type": "std_msgs/msg/Int16"
+                },
+                {
+                    "name": "/respeaker/direction_continuous",
+                    "type": "std_msgs/msg/Int16"
+                },
+                {
+                    "name": "/respeaker/direction_raw",
+                    "type": "std_msgs/msg/Int16"
+                },
+                {
+                    "name": "/respeaker/is_speeching_raw",
+                    "type": "rosass_msgs/msg/AudioMarker"
+                },
+                {
+                    "name": "/respeaker/speech_audio",
+                    "type": "rosass_msgs/msg/AudioBuffer"
+                },
+                {
+                    "name": "/respeaker/speech_audio_stream_finish",
+                    "type": "std_msgs/msg/Bool"
+                },
+                {
+                    "name": "/rosout",
+                    "type": "rcl_interfaces/msg/Log"
+                },
+                {
+                    "name": "/speech",
+                    "type": "rosass_msgs/msg/AudioBuffer"
+                },
+                {
+                    "name": "/va_state",
+                    "type": "rosass_msgs/msg/AudioMarker"
+                }
+            ],
+            "subscribers": [
+                {
+                    "name": "/parameter_events",
+                    "type": "rcl_interfaces/msg/ParameterEvent"
+                }
+            ],
+            "services": [
+                {
+                    "name": "/respeaker/describe_parameters",
+                    "type": "rcl_interfaces/srv/DescribeParameters"
+                },
+                {
+                    "name": "/respeaker/get_parameter_types",
+                    "type": "rcl_interfaces/srv/GetParameterTypes"
+                },
+                {
+                    "name": "/respeaker/get_parameters",
+                    "type": "rcl_interfaces/srv/GetParameters"
+                },
+                {
+                    "name": "/respeaker/list_parameters",
+                    "type": "rcl_interfaces/srv/ListParameters"
+                },
+                {
+                    "name": "/respeaker/set_parameters",
+                    "type": "rcl_interfaces/srv/SetParameters"
+                },
+                {
+                    "name": "/respeaker/set_parameters_atomically",
+                    "type": "rcl_interfaces/srv/SetParametersAtomically"
+                }
+            ],
+            "clients": []
+        },
+        {
+            "name": "dialog_session_manager",
+            "namespace": "/",
+            "localhost_only": false,
+            "publishers": [
+                {
+                    "name": "/dialog_session_manager/output/state_configuration",
+                    "type": "rosass_msgs/msg/StateConfiguration"
+                },
+                {
+                    "name": "/dialog_status",
+                    "type": "rosass_msgs/msg/DialogStatus"
+                },
+                {
+                    "name": "/enable_kwd",
+                    "type": "std_msgs/msg/Bool"
+                },
+                {
+                    "name": "/parameter_events",
+                    "type": "rcl_interfaces/msg/ParameterEvent"
+                },
+                {
+                    "name": "/rosout",
+                    "type": "rcl_interfaces/msg/Log"
+                },
+                {
+                    "name": "/utterance_state",
+                    "type": "rosass_msgs/msg/AudioMarker"
+                }
+            ],
+            "subscribers": [
+                {
+                    "name": "/kw_detected_guarded",
+                    "type": "rosass_msgs/msg/AudioMarker"
+                },
+                {
+                    "name": "/listen_now",
+                    "type": "std_msgs/msg/Empty"
+                },
+                {
+                    "name": "/parameter_events",
+                    "type": "rcl_interfaces/msg/ParameterEvent"
+                },
+                {
+                    "name": "/system_output",
+                    "type": "rosass_msgs/msg/Text"
+                },
+                {
+                    "name": "/tts_state",
+                    "type": "rosass_msgs/msg/AudioMarker"
+                },
+                {
+                    "name": "/user_input",
+                    "type": "rosass_msgs/msg/Text"
+                },
+                {
+                    "name": "/va_state",
+                    "type": "rosass_msgs/msg/AudioMarker"
+                }
+            ],
+            "services": [
+                {
+                    "name": "/dialog_session_manager/describe_parameters",
+                    "type": "rcl_interfaces/srv/DescribeParameters"
+                },
+                {
+                    "name": "/dialog_session_manager/get_parameter_types",
+                    "type": "rcl_interfaces/srv/GetParameterTypes"
+                },
+                {
+                    "name": "/dialog_session_manager/get_parameters",
+                    "type": "rcl_interfaces/srv/GetParameters"
+                },
+                {
+                    "name": "/dialog_session_manager/list_parameters",
+                    "type": "rcl_interfaces/srv/ListParameters"
+                },
+                {
+                    "name": "/dialog_session_manager/set_parameters",
+                    "type": "rcl_interfaces/srv/SetParameters"
+                },
+                {
+                    "name": "/dialog_session_manager/set_parameters_atomically",
+                    "type": "rcl_interfaces/srv/SetParametersAtomically"
+                }
+            ],
+            "clients": [
+                {
+                    "name": "/asr_vosk/list_parameters",
+                    "type": "rcl_interfaces/srv/ListParameters"
+                },
+                {
+                    "name": "/respeaker/set_parameters",
+                    "type": "rcl_interfaces/srv/SetParameters"
+                },
+                {
+                    "name": "/stop_stt",
+                    "type": "rosass_msgs/srv/StopSTT"
+                }
+            ]
+        },
+        {
+            "name": "status_visualizer_led",
+            "namespace": "/",
+            "localhost_only": false,
+            "publishers": [
+                {
+                    "name": "/parameter_events",
+                    "type": "rcl_interfaces/msg/ParameterEvent"
+                },
+                {
+                    "name": "/rosout",
+                    "type": "rcl_interfaces/msg/Log"
+                }
+            ],
+            "subscribers": [
+                {
+                    "name": "/dialog_status",
+                    "type": "rosass_msgs/msg/DialogStatus"
+                },
+                {
+                    "name": "/parameter_events",
+                    "type": "rcl_interfaces/msg/ParameterEvent"
+                },
+                {
+                    "name": "/tts_loudness",
+                    "type": "std_msgs/msg/Float32"
+                },
+                {
+                    "name": "/va_state",
+                    "type": "rosass_msgs/msg/AudioMarker"
+                }
+            ],
+            "services": [
+                {
+                    "name": "/status_visualizer_led/describe_parameters",
+                    "type": "rcl_interfaces/srv/DescribeParameters"
+                },
+                {
+                    "name": "/status_visualizer_led/get_parameter_types",
+                    "type": "rcl_interfaces/srv/GetParameterTypes"
+                },
+                {
+                    "name": "/status_visualizer_led/get_parameters",
+                    "type": "rcl_interfaces/srv/GetParameters"
+                },
+                {
+                    "name": "/status_visualizer_led/list_parameters",
+                    "type": "rcl_interfaces/srv/ListParameters"
+                },
+                {
+                    "name": "/status_visualizer_led/set_parameters",
+                    "type": "rcl_interfaces/srv/SetParameters"
+                },
+                {
+                    "name": "/status_visualizer_led/set_parameters_atomically",
+                    "type": "rcl_interfaces/srv/SetParametersAtomically"
+                }
+            ],
+            "clients": []
+        },
+        {
+            "name": "asr_vosk",
+            "namespace": "/",
+            "localhost_only": false,
+            "publishers": [
+                {
+                    "name": "/asr_vosk/output/stt_state",
+                    "type": "rosass_msgs/msg/TaskState"
+                },
+                {
+                    "name": "/parameter_events",
+                    "type": "rcl_interfaces/msg/ParameterEvent"
+                },
+                {
+                    "name": "/rosout",
+                    "type": "rcl_interfaces/msg/Log"
+                },
+                {
+                    "name": "/user_input",
+                    "type": "rosass_msgs/msg/Text"
+                }
+            ],
+            "subscribers": [
+                {
+                    "name": "/parameter_events",
+                    "type": "rcl_interfaces/msg/ParameterEvent"
+                },
+                {
+                    "name": "/speech",
+                    "type": "rosass_msgs/msg/AudioBuffer"
+                },
+                {
+                    "name": "/utterance_state",
+                    "type": "rosass_msgs/msg/AudioMarker"
+                }
+            ],
+            "services": [
+                {
+                    "name": "/asr_vosk/describe_parameters",
+                    "type": "rcl_interfaces/srv/DescribeParameters"
+                },
+                {
+                    "name": "/asr_vosk/get_parameter_types",
+                    "type": "rcl_interfaces/srv/GetParameterTypes"
+                },
+                {
+                    "name": "/asr_vosk/get_parameters",
+                    "type": "rcl_interfaces/srv/GetParameters"
+                },
+                {
+                    "name": "/asr_vosk/list_parameters",
+                    "type": "rcl_interfaces/srv/ListParameters"
+                },
+                {
+                    "name": "/asr_vosk/set_parameters",
+                    "type": "rcl_interfaces/srv/SetParameters"
+                },
+                {
+                    "name": "/asr_vosk/set_parameters_atomically",
+                    "type": "rcl_interfaces/srv/SetParametersAtomically"
+                },
+                {
+                    "name": "/get_hypothesis",
+                    "type": "rosass_msgs/srv/GetHypothesis"
+                },
+                {
+                    "name": "/start_stt",
+                    "type": "rosass_msgs/srv/StartSTT"
+                },
+                {
+                    "name": "/stop_stt",
+                    "type": "rosass_msgs/srv/StopSTT"
+                }
+            ],
+            "clients": []
+        },
+        {
+            "name": "kwd_precise",
+            "namespace": "/",
+            "localhost_only": false,
+            "publishers": [
+                {
+                    "name": "/kw_detected",
+                    "type": "rosass_msgs/msg/AudioMarker"
+                },
+                {
+                    "name": "/parameter_events",
+                    "type": "rcl_interfaces/msg/ParameterEvent"
+                },
+                {
+                    "name": "/rosout",
+                    "type": "rcl_interfaces/msg/Log"
+                }
+            ],
+            "subscribers": [
+                {
+                    "name": "/enable_kwd",
+                    "type": "std_msgs/msg/Bool"
+                },
+                {
+                    "name": "/parameter_events",
+                    "type": "rcl_interfaces/msg/ParameterEvent"
+                },
+                {
+                    "name": "/speech",
+                    "type": "rosass_msgs/msg/AudioBuffer"
+                }
+            ],
+            "services": [
+                {
+                    "name": "/kwd_precise/describe_parameters",
+                    "type": "rcl_interfaces/srv/DescribeParameters"
+                },
+                {
+                    "name": "/kwd_precise/get_parameter_types",
+                    "type": "rcl_interfaces/srv/GetParameterTypes"
+                },
+                {
+                    "name": "/kwd_precise/get_parameters",
+                    "type": "rcl_interfaces/srv/GetParameters"
+                },
+                {
+                    "name": "/kwd_precise/list_parameters",
+                    "type": "rcl_interfaces/srv/ListParameters"
+                },
+                {
+                    "name": "/kwd_precise/set_parameters",
+                    "type": "rcl_interfaces/srv/SetParameters"
+                },
+                {
+                    "name": "/kwd_precise/set_parameters_atomically",
+                    "type": "rcl_interfaces/srv/SetParametersAtomically"
+                }
+            ],
+            "clients": []
+        },
+        {
+            "name": "tts_pico",
+            "namespace": "/",
+            "localhost_only": false,
+            "publishers": [
+                {
+                    "name": "/parameter_events",
+                    "type": "rcl_interfaces/msg/ParameterEvent"
+                },
+                {
+                    "name": "/rosout",
+                    "type": "rcl_interfaces/msg/Log"
+                },
+                {
+                    "name": "/tts_state",
+                    "type": "rosass_msgs/msg/AudioMarker"
+                },
+                {
+                    "name": "/voice_raw",
+                    "type": "rosass_msgs/msg/AudioBuffer"
+                }
+            ],
+            "subscribers": [
+                {
+                    "name": "/parameter_events",
+                    "type": "rcl_interfaces/msg/ParameterEvent"
+                },
+                {
+                    "name": "/system_output",
+                    "type": "rosass_msgs/msg/Text"
+                }
+            ],
+            "services": [
+                {
+                    "name": "/stop_tts",
+                    "type": "rosass_msgs/srv/StopTTS"
+                },
+                {
+                    "name": "/tts_pico/describe_parameters",
+                    "type": "rcl_interfaces/srv/DescribeParameters"
+                },
+                {
+                    "name": "/tts_pico/get_parameter_types",
+                    "type": "rcl_interfaces/srv/GetParameterTypes"
+                },
+                {
+                    "name": "/tts_pico/get_parameters",
+                    "type": "rcl_interfaces/srv/GetParameters"
+                },
+                {
+                    "name": "/tts_pico/list_parameters",
+                    "type": "rcl_interfaces/srv/ListParameters"
+                },
+                {
+                    "name": "/tts_pico/set_parameters",
+                    "type": "rcl_interfaces/srv/SetParameters"
+                },
+                {
+                    "name": "/tts_pico/set_parameters_atomically",
+                    "type": "rcl_interfaces/srv/SetParametersAtomically"
+                }
+            ],
+            "clients": []
+        },
+        {
+            "name": "equalizer",
+            "namespace": "/",
+            "localhost_only": false,
+            "publishers": [
+                {
+                    "name": "/parameter_events",
+                    "type": "rcl_interfaces/msg/ParameterEvent"
+                },
+                {
+                    "name": "/rosout",
+                    "type": "rcl_interfaces/msg/Log"
+                },
+                {
+                    "name": "/voice_equalized",
+                    "type": "rosass_msgs/msg/AudioBuffer"
+                }
+            ],
+            "subscribers": [
+                {
+                    "name": "/parameter_events",
+                    "type": "rcl_interfaces/msg/ParameterEvent"
+                },
+                {
+                    "name": "/voice_raw",
+                    "type": "rosass_msgs/msg/AudioBuffer"
+                }
+            ],
+            "services": [
+                {
+                    "name": "/equalizer/describe_parameters",
+                    "type": "rcl_interfaces/srv/DescribeParameters"
+                },
+                {
+                    "name": "/equalizer/get_parameter_types",
+                    "type": "rcl_interfaces/srv/GetParameterTypes"
+                },
+                {
+                    "name": "/equalizer/get_parameters",
+                    "type": "rcl_interfaces/srv/GetParameters"
+                },
+                {
+                    "name": "/equalizer/list_parameters",
+                    "type": "rcl_interfaces/srv/ListParameters"
+                },
+                {
+                    "name": "/equalizer/set_parameters",
+                    "type": "rcl_interfaces/srv/SetParameters"
+                },
+                {
+                    "name": "/equalizer/set_parameters_atomically",
+                    "type": "rcl_interfaces/srv/SetParametersAtomically"
+                }
+            ],
+            "clients": []
+        },
+        {
+            "name": "loudness_analyser",
+            "namespace": "/",
+            "localhost_only": false,
+            "publishers": [
+                {
+                    "name": "/parameter_events",
+                    "type": "rcl_interfaces/msg/ParameterEvent"
+                },
+                {
+                    "name": "/rosout",
+                    "type": "rcl_interfaces/msg/Log"
+                },
+                {
+                    "name": "/tts_loudness",
+                    "type": "std_msgs/msg/Float32"
+                }
+            ],
+            "subscribers": [
+                {
+                    "name": "/parameter_events",
+                    "type": "rcl_interfaces/msg/ParameterEvent"
+                },
+                {
+                    "name": "/voice_equalized",
+                    "type": "rosass_msgs/msg/AudioBuffer"
+                }
+            ],
+            "services": [
+                {
+                    "name": "/loudness_analyser/describe_parameters",
+                    "type": "rcl_interfaces/srv/DescribeParameters"
+                },
+                {
+                    "name": "/loudness_analyser/get_parameter_types",
+                    "type": "rcl_interfaces/srv/GetParameterTypes"
+                },
+                {
+                    "name": "/loudness_analyser/get_parameters",
+                    "type": "rcl_interfaces/srv/GetParameters"
+                },
+                {
+                    "name": "/loudness_analyser/list_parameters",
+                    "type": "rcl_interfaces/srv/ListParameters"
+                },
+                {
+                    "name": "/loudness_analyser/set_parameters",
+                    "type": "rcl_interfaces/srv/SetParameters"
+                },
+                {
+                    "name": "/loudness_analyser/set_parameters_atomically",
+                    "type": "rcl_interfaces/srv/SetParametersAtomically"
+                }
+            ],
+            "clients": []
+        },
+        {
+            "name": "sound_sink_pulse",
+            "namespace": "/",
+            "localhost_only": false,
+            "publishers": [
+                {
+                    "name": "/parameter_events",
+                    "type": "rcl_interfaces/msg/ParameterEvent"
+                },
+                {
+                    "name": "/rosout",
+                    "type": "rcl_interfaces/msg/Log"
+                }
+            ],
+            "subscribers": [
+                {
+                    "name": "/parameter_events",
+                    "type": "rcl_interfaces/msg/ParameterEvent"
+                },
+                {
+                    "name": "/voice_equalized",
+                    "type": "rosass_msgs/msg/AudioBuffer"
+                }
+            ],
+            "services": [
+                {
+                    "name": "/sound_sink_pulse/describe_parameters",
+                    "type": "rcl_interfaces/srv/DescribeParameters"
+                },
+                {
+                    "name": "/sound_sink_pulse/get_parameter_types",
+                    "type": "rcl_interfaces/srv/GetParameterTypes"
+                },
+                {
+                    "name": "/sound_sink_pulse/get_parameters",
+                    "type": "rcl_interfaces/srv/GetParameters"
+                },
+                {
+                    "name": "/sound_sink_pulse/list_parameters",
+                    "type": "rcl_interfaces/srv/ListParameters"
+                },
+                {
+                    "name": "/sound_sink_pulse/set_parameters",
+                    "type": "rcl_interfaces/srv/SetParameters"
+                },
+                {
+                    "name": "/sound_sink_pulse/set_parameters_atomically",
+                    "type": "rcl_interfaces/srv/SetParametersAtomically"
+                }
+            ],
+            "clients": []
+        }
+    ]
+}

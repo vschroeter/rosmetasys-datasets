@@ -1,0 +1,203 @@
+{
+    "version": "1.0.0",
+    "name": "0006nodes_2023-09-01_12_00_00_selfdrivingCar",
+    "description": "7 running nodes in a self-driving car using ROS (from https://github.com/ser94mor/self-driving-car-using-ros).",
+    "created_at": "2023-09-01T12:00:00.000000",
+    "nodeCount": 7,
+    "author": "vschroeter",
+    "cc_by_sa_consent": true,
+    "nodes": [
+        {
+            "name": "car_simulator",
+            "namespace": "/",
+            "localhost_only": false,
+            "publishers": [
+                {
+                    "name": "/image_color",
+                    "type": ""
+                },
+                {
+                    "name": "/current_pose",
+                    "type": ""
+                },
+                {
+                    "name": "/current_velocity",
+                    "type": ""
+                },
+                {
+                    "name": "/vehicle/dbw_enabled",
+                    "type": ""
+                }
+            ],
+            "subscribers": [
+                {
+                    "name": "/vehicle/brake_cmd",
+                    "type": ""
+                },
+                {
+                    "name": "/vehicle/steering_cmd",
+                    "type": ""
+                },
+                {
+                    "name": "/vehicle/throttle_cmd",
+                    "type": ""
+                }
+            ],
+            "services": [],
+            "clients": []
+        },
+        {
+            "name": "obstacle_detection",
+            "namespace": "/",
+            "localhost_only": false,
+            "publishers": [
+                {
+                    "name": "/obstacle_waypoint",
+                    "type": ""
+                }
+            ],
+            "subscribers": [
+                {
+                    "name": "/image_color",
+                    "type": ""
+                },
+                {
+                    "name": "/current_pose",
+                    "type": ""
+                },
+                {
+                    "name": "/base_waypoints",
+                    "type": ""
+                }
+            ],
+            "services": [],
+            "clients": []
+        },
+        {
+            "name": "traffic_light_detection",
+            "namespace": "/",
+            "localhost_only": false,
+            "publishers": [
+                {
+                    "name": "/traffic_waypoint",
+                    "type": ""
+                }
+            ],
+            "subscribers": [
+                {
+                    "name": "/image_color",
+                    "type": ""
+                },
+                {
+                    "name": "/current_pose",
+                    "type": ""
+                },
+                {
+                    "name": "/base_waypoints",
+                    "type": ""
+                }
+            ],
+            "services": [],
+            "clients": []
+        },
+        {
+            "name": "waypoint_loader",
+            "namespace": "/",
+            "localhost_only": false,
+            "publishers": [
+                {
+                    "name": "/base_waypoints",
+                    "type": ""
+                }
+            ],
+            "subscribers": [],
+            "services": [],
+            "clients": []
+        },
+        {
+            "name": "waypoint_updater",
+            "namespace": "/",
+            "localhost_only": false,
+            "publishers": [
+                {
+                    "name": "/obstacle_waypoint",
+                    "type": ""
+                },
+                {
+                    "name": "/final_waypoints",
+                    "type": ""
+                }
+            ],
+            "subscribers": [
+                {
+                    "name": "/current_pose",
+                    "type": ""
+                },
+                {
+                    "name": "/base_waypoints",
+                    "type": ""
+                },
+                {
+                    "name": "/traffic_waypoint",
+                    "type": ""
+                }
+            ],
+            "services": [],
+            "clients": []
+        },
+        {
+            "name": "waypoint_follower",
+            "namespace": "/",
+            "localhost_only": false,
+            "publishers": [
+                {
+                    "name": "/twist_cmd",
+                    "type": ""
+                }
+            ],
+            "subscribers": [
+                {
+                    "name": "/final_waypoints",
+                    "type": ""
+                }
+            ],
+            "services": [],
+            "clients": []
+        },
+        {
+            "name": "drive_controller",
+            "namespace": "/",
+            "localhost_only": false,
+            "publishers": [
+                {
+                    "name": "/vehicle/brake_cmd",
+                    "type": ""
+                },
+                {
+                    "name": "/vehicle/steering_cmd",
+                    "type": ""
+                },
+                {
+                    "name": "/vehicle/throttle_cmd",
+                    "type": ""
+                }
+            ],
+            "subscribers": [
+                {
+                    "name": "/current_velocity",
+                    "type": ""
+                },
+                {
+                    "name": "/vehicle/dbw_enabled",
+                    "type": ""
+                },
+                {
+                    "name": "/twist_cmd",
+                    "type": ""
+                }
+            ],
+            "services": [],
+            "clients": []
+        }
+    ]
+}

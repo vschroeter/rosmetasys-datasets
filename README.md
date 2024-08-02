@@ -13,17 +13,17 @@ Fork the repository and make sure to add your dataset .json to the `datasets` fo
 ### **By Email:**
 If you want to anonymously submit your dataset without creating a pull request and have it uploaded to the repository, you can zip your dataset and send it to me via email (valentin.schroeter@hpi.uni-potsdam.de). 
 
-## Usage of the datasets
+## Usage of the Datasets
 
 The objective of the data gathering is to create an open-source, accessible dataset in accordance with the [FAIR-Principles](https://www.go-fair.org/fair-principles/). 
-Snapshots of the dataset may be published as a collection on [Zenodo](https://zenodo.org/).
+Snapshots of the dataset may be published as a collection on [Zenodo](https://zenodo.org/) (provided that the original author has given his consent).
 
-## Visualize your dataset
+## Visualize your Dataset
 
 You can test the visualization of your data on https://vschroeter.github.io/RosComGraph/#/.
 Open the website and upload the data set at the `Upload JSON file` input field in the left drawer.
 
-## Format of the datasets
+## Format of the Datasets
 
 ```json
 {

@@ -1,4 +1,4 @@
-# Rosmetasys Datasets
+# rosmetasys Datasets
 Datasets gathered with [rosmetasys](https://github.com/vschroeter/rosmetasys) and used for [RosComGraph](https://vschroeter.github.io/RosComGraph/#/) and [VisCom](https://github.com/vschroeter/viscom) (WiP).
 
 ## Contribute Datasets

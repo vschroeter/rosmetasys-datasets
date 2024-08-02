@@ -23,6 +23,9 @@ Snapshots of the dataset may be published as a collection on [Zenodo](https://ze
 You can test the visualization of your data on https://vschroeter.github.io/RosComGraph/#/.
 Open the website and upload the data set at the `Upload JSON file` input field in the left drawer.
 
+<img width="881" alt="image" src="https://github.com/user-attachments/assets/e6a3b8ba-3035-49d2-b3c9-00651f907a43">
+
+
 ## Format of the Datasets
 
 ```json

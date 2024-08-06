@@ -12,7 +12,7 @@ Here is a new ROS2 meta system dataset generated with [rosmetasys](https://githu
 I agree to the following:
 - By publishing the dataset in this issue, I consent to its storage in this open-source repository.
 - By publishing the dataset in this issue, I consent to its usage for implementing and evaluating graph and visualization algorithms. 
-- [x] I consent to the publication of the dataset under the CC BY-SA license (e.g., on [Zenodo}(https://zenodo.org/)).
+- [x] I consent to the publication of the dataset under the CC BY-SA license (e.g., on [Zenodo](https://zenodo.org/)).
 
 
 Here are some details about the origin of the data:
